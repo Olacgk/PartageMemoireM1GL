@@ -49,16 +49,133 @@ namespace ServiceMetier
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Expert", Namespace="http://schemas.datacontract.org/2004/07/MetierPM.Model")]
+    public partial class Expert : ServiceMetier.Personne
+    {
+        
+        private string SpecialiteField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Specialite
+        {
+            get
+            {
+                return this.SpecialiteField;
+            }
+            set
+            {
+                this.SpecialiteField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Personne", Namespace="http://schemas.datacontract.org/2004/07/MetierPM.Model")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ServiceMetier.Expert))]
+    public partial class Personne : object
+    {
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private string PrenomField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prenom
+        {
+            get
+            {
+                return this.PrenomField;
+            }
+            set
+            {
+                this.PrenomField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceMetier.IService1")]
     public interface IService1
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
+        string GetData(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
+        ServiceMetier.CompositeType GetDataUsingDataContract(ServiceMetier.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ServiceMetier.CompositeType> GetDataUsingDataContractAsync(ServiceMetier.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExperts", ReplyAction="http://tempuri.org/IService1/GetExpertsResponse")]
+        ServiceMetier.Expert[] GetExperts(string Name, string Prenom, string Specialite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExperts", ReplyAction="http://tempuri.org/IService1/GetExpertsResponse")]
+        System.Threading.Tasks.Task<ServiceMetier.Expert[]> GetExpertsAsync(string Name, string Prenom, string Specialite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpert", ReplyAction="http://tempuri.org/IService1/GetExpertResponse")]
+        ServiceMetier.Expert GetExpert(System.Nullable<int> idExpert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpert", ReplyAction="http://tempuri.org/IService1/GetExpertResponse")]
+        System.Threading.Tasks.Task<ServiceMetier.Expert> GetExpertAsync(System.Nullable<int> idExpert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllExpert", ReplyAction="http://tempuri.org/IService1/GetAllExpertResponse")]
+        ServiceMetier.Expert[] GetAllExpert();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllExpert", ReplyAction="http://tempuri.org/IService1/GetAllExpertResponse")]
+        System.Threading.Tasks.Task<ServiceMetier.Expert[]> GetAllExpertAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteExpert", ReplyAction="http://tempuri.org/IService1/DeleteExpertResponse")]
+        bool DeleteExpert(System.Nullable<int> idExpert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteExpert", ReplyAction="http://tempuri.org/IService1/DeleteExpertResponse")]
+        System.Threading.Tasks.Task<bool> DeleteExpertAsync(System.Nullable<int> idExpert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpert", ReplyAction="http://tempuri.org/IService1/UpdateExpertResponse")]
+        bool UpdateExpert(ServiceMetier.Expert expert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpert", ReplyAction="http://tempuri.org/IService1/UpdateExpertResponse")]
+        System.Threading.Tasks.Task<bool> UpdateExpertAsync(ServiceMetier.Expert expert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
+        bool AddExpert(ServiceMetier.Expert expert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
+        System.Threading.Tasks.Task<bool> AddExpertAsync(ServiceMetier.Expert expert);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
@@ -111,14 +228,84 @@ namespace ServiceMetier
         {
         }
         
+        public string GetData(int value)
+        {
+            return base.Channel.GetData(value);
+        }
+        
         public System.Threading.Tasks.Task<string> GetDataAsync(int value)
         {
             return base.Channel.GetDataAsync(value);
         }
         
+        public ServiceMetier.CompositeType GetDataUsingDataContract(ServiceMetier.CompositeType composite)
+        {
+            return base.Channel.GetDataUsingDataContract(composite);
+        }
+        
         public System.Threading.Tasks.Task<ServiceMetier.CompositeType> GetDataUsingDataContractAsync(ServiceMetier.CompositeType composite)
         {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public ServiceMetier.Expert[] GetExperts(string Name, string Prenom, string Specialite)
+        {
+            return base.Channel.GetExperts(Name, Prenom, Specialite);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceMetier.Expert[]> GetExpertsAsync(string Name, string Prenom, string Specialite)
+        {
+            return base.Channel.GetExpertsAsync(Name, Prenom, Specialite);
+        }
+        
+        public ServiceMetier.Expert GetExpert(System.Nullable<int> idExpert)
+        {
+            return base.Channel.GetExpert(idExpert);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceMetier.Expert> GetExpertAsync(System.Nullable<int> idExpert)
+        {
+            return base.Channel.GetExpertAsync(idExpert);
+        }
+        
+        public ServiceMetier.Expert[] GetAllExpert()
+        {
+            return base.Channel.GetAllExpert();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceMetier.Expert[]> GetAllExpertAsync()
+        {
+            return base.Channel.GetAllExpertAsync();
+        }
+        
+        public bool DeleteExpert(System.Nullable<int> idExpert)
+        {
+            return base.Channel.DeleteExpert(idExpert);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteExpertAsync(System.Nullable<int> idExpert)
+        {
+            return base.Channel.DeleteExpertAsync(idExpert);
+        }
+        
+        public bool UpdateExpert(ServiceMetier.Expert expert)
+        {
+            return base.Channel.UpdateExpert(expert);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateExpertAsync(ServiceMetier.Expert expert)
+        {
+            return base.Channel.UpdateExpertAsync(expert);
+        }
+        
+        public bool AddExpert(ServiceMetier.Expert expert)
+        {
+            return base.Channel.AddExpert(expert);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddExpertAsync(ServiceMetier.Expert expert)
+        {
+            return base.Channel.AddExpertAsync(expert);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
