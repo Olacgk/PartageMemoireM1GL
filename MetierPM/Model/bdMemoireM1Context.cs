@@ -13,5 +13,9 @@ namespace MetierPM.Model
         public bdMemoireM1Context() : base("connBdMemoire1") { }
 
         public DbSet<Personne> personnes {  get; set; }
+
+        public DbSet<Expert> experts { get; set; }
+        public DbSet<Commentaire> comments { get; set; }
+        //public DbSet<Memoire> memoires { get; set; }
     }
 }

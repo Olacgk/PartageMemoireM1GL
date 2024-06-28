@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetierPM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -19,6 +20,23 @@ namespace MetierPM
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        List<Expert> GetExperts(string Name, string Prenom, string Specialite);
+
+        [OperationContract]
+        Expert GetExpert(int? idExpert);
+
+        [OperationContract]
+        List<Expert> GetAllExpert();
+
+        [OperationContract]
+        bool DeleteExpert(int? idExpert);
+
+        [OperationContract]
+        bool UpdateExpert(Expert expert);
+
+        [OperationContract]
+        bool AddExpert(Expert expert);
         // TODO: Add your service operations here
     }
 
