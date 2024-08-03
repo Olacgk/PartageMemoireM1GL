@@ -130,6 +130,7 @@
     <Content Include="Service1.svc" />
     <Content Include="Services\ExpertService.svc" />
     <Content Include="Services\LecteurService\LecteurService.svc" />
+    <Content Include="Services\MemoireService\MemoireService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,10 @@
     <Compile Include="Services\LecteurService\ILecteurService.cs" />
     <Compile Include="Services\LecteurService\LecteurService.svc.cs">
       <DependentUpon>LecteurService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\MemoireService\IMemoireService.cs" />
+    <Compile Include="Services\MemoireService\MemoireService.svc.cs">
+      <DependentUpon>MemoireService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
