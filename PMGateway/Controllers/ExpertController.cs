@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace PMGateway.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class ExpertController : ControllerBase
     {

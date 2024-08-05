@@ -134,5 +134,18 @@ namespace MetierPM.Services
 
                 return liste;
         }
+
+        public Expert VerifyEmailAndPaswword(string Email)
+        {
+            try
+            {
+                var user = db.experts.SingleOrDefault(x => x.Email == Email);
+                return user;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

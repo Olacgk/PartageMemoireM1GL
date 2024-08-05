@@ -17,5 +17,7 @@ namespace MetierPM.Model
         public string Prenom { get; set; }
         [Required(ErrorMessage = "*")]
         public string Email { get; set; }
+
+        //public string Password { get; set; }
     }
 }

@@ -31,5 +31,8 @@ namespace MetierPM.Services
 
         [OperationContract]
         List<Expert> GetExperts(string SearchItem);
+
+        [OperationContract]
+        Expert VerifyEmailAndPaswword(string Email);
     }
 }
