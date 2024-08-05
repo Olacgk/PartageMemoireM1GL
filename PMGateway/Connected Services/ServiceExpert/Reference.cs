@@ -142,6 +142,12 @@ namespace ServiceExpert
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpertService/GetExperts", ReplyAction="http://tempuri.org/IExpertService/GetExpertsResponse")]
         System.Threading.Tasks.Task<ServiceExpert.Expert[]> GetExpertsAsync(string SearchItem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpertService/VerifyEmailAndPaswword", ReplyAction="http://tempuri.org/IExpertService/VerifyEmailAndPaswwordResponse")]
+        ServiceExpert.Expert VerifyEmailAndPaswword(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpertService/VerifyEmailAndPaswword", ReplyAction="http://tempuri.org/IExpertService/VerifyEmailAndPaswwordResponse")]
+        System.Threading.Tasks.Task<ServiceExpert.Expert> VerifyEmailAndPaswwordAsync(string Email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
@@ -252,6 +258,16 @@ namespace ServiceExpert
         public System.Threading.Tasks.Task<ServiceExpert.Expert[]> GetExpertsAsync(string SearchItem)
         {
             return base.Channel.GetExpertsAsync(SearchItem);
+        }
+        
+        public ServiceExpert.Expert VerifyEmailAndPaswword(string Email)
+        {
+            return base.Channel.VerifyEmailAndPaswword(Email);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceExpert.Expert> VerifyEmailAndPaswwordAsync(string Email)
+        {
+            return base.Channel.VerifyEmailAndPaswwordAsync(Email);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
